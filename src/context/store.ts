@@ -15,7 +15,8 @@ export class Store {
     }
 
     lists: ToDoListItemsFragment[] = [];
-    item: ToDoItemFragment
+    item: ToDoItemFragment;
+    loading: boolean;
 
     private _setStore: React.Dispatch<React.SetStateAction<Store>> = () => {};
     private refresh() {
@@ -23,25 +24,31 @@ export class Store {
     }
 
     async refetch() {
+        this.loading = true;
        const data = (await getTodoList()).data;
         if (data) {
          this.lists = data.todos;
+         this.loading = false;
         }
         this.refresh();
       }
     
     async singlefetch(id: string) {
+        this.loading = true;
         const data = (await getTodoItem(id)).data;
         if (data) {
             this.item = data.todo;
+            this.loading = false;
         }
         this.refresh();
     }
 
     async updateTodo(id: string, type: string) {
+        this.loading = true;
         const data = (await updateTodoItem(id, type)).data;
         if (data) {
             this.item = data.updateTodo;
+            this.loading = false;
         }
         this.refresh();
     }

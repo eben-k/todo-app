@@ -9,23 +9,12 @@
   height: 40vmin;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
 .header {
   margin-bottom: 50px;
+}
+
+.input-error {
+  color: #FF8800;
 }
 
 .todo-card {
@@ -34,4 +23,13 @@
 
 .todo-text {
   overflow-wrap: break-word;
+}
+
+.todo-holder {
+  margin-bottom: 20px;
+  height: 200px;
+}
+
+.update-todo {
+  margin: 75px;
 }

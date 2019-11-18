@@ -9,9 +9,9 @@ interface Props {
 export default ({ id, type }: Props) => {
     return (
         <div className="todo-card">
-         <Card title={id} bordered={false}>
+         <Card title={`TASK ID: ${id}`} bordered={false}>
           <p className="todo-text">{type}</p>
         </Card>
         </div>
-    )
-}
+    );
+};
